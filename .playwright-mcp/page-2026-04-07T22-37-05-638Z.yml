@@ -1,0 +1,286 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "MrCipherSmith" [ref=e4] [cursor=pointer]:
+        - /url: "#hero"
+      - navigation "Main navigation" [ref=e5]:
+        - link "About" [ref=e6] [cursor=pointer]:
+          - /url: "#about"
+        - link "Projects" [ref=e7] [cursor=pointer]:
+          - /url: "#projects"
+        - link "Stack" [ref=e8] [cursor=pointer]:
+          - /url: "#tech-stack"
+        - link "Philosophy" [ref=e9] [cursor=pointer]:
+          - /url: "#philosophy"
+        - link "Timeline" [ref=e10] [cursor=pointer]:
+          - /url: "#timeline"
+        - link "GitHub profile" [ref=e11] [cursor=pointer]:
+          - /url: https://github.com/MrCipherSmith
+          - img [ref=e12]
+  - generic [ref=e14]:
+    - generic [ref=e18]:
+      - heading "I build the layer between AI and developers" [level=1] [ref=e21]:
+        - text: I build the layer between
+        - text: AI and developers
+      - paragraph [ref=e22]: Tools that let AI understand your codebase, remember your context, and work alongside you — not against you.
+    - link [ref=e25] [cursor=pointer]:
+      - /url: "#essence"
+      - img [ref=e26]
+  - generic [ref=e29]:
+    - heading "AI-Native Developer Tools" [level=2] [ref=e30]
+    - paragraph [ref=e31]: "I build the infrastructure that connects AI models to real developer workflows. Every project starts with a simple question: how can we make AI tools more accessible, more flexible, and more integrated into the way developers actually work?"
+    - paragraph [ref=e32]: From Telegram-powered Claude Code sessions to multi-LLM shims that unlock 200+ models — the focus is always on developer experience and provider freedom.
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - img [ref=e36]
+        - heading "Provider-Agnostic" [level=3] [ref=e40]
+        - paragraph [ref=e41]: No vendor lock-in. Support for OpenAI, Anthropic, Google, Ollama, DeepSeek — switch models, not architecture.
+      - generic [ref=e42]:
+        - img [ref=e44]
+        - heading "Docker-First" [level=3] [ref=e54]
+        - paragraph [ref=e55]: Every project runs with a single command. Full stack in containers — database, AI, backend, dashboard.
+      - generic [ref=e56]:
+        - img [ref=e58]
+        - heading "Open Source" [level=3] [ref=e60]
+        - paragraph [ref=e61]: MIT licensed, transparent, community-driven. Build in the open, learn from the code.
+    - generic [ref=e62]:
+      - generic [ref=e65]: 4 public repositories
+      - generic [ref=e68]: 237 commits
+      - generic [ref=e71]: 6 months active development
+      - generic [ref=e74]: MIT License
+  - generic [ref=e76]:
+    - heading "Featured Projects" [level=2] [ref=e77]
+    - paragraph [ref=e78]: Open source tools that bridge AI models and developer workflows. Each project is production-ready with Docker, CI/CD, and comprehensive docs.
+    - generic [ref=e79]:
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - generic [ref=e84]: Featured
+            - heading "multiclaude-tg-bot" [level=3] [ref=e85]
+          - generic [ref=e86]:
+            - generic [ref=e87]:
+              - img [ref=e88]
+              - text: 175 commits
+            - generic [ref=e93]:
+              - img [ref=e94]
+              - text: "1"
+        - paragraph [ref=e99]: Control Claude Code from Telegram. Multi-session MCP bot with dual-layer memory, voice transcription, web dashboard, and real-time CLI monitoring.
+        - generic [ref=e100]:
+          - generic [ref=e103]: Multi-session MCP server
+          - generic [ref=e106]: Dual-layer memory with semantic search
+          - generic [ref=e109]: Voice transcription (Groq Whisper)
+          - generic [ref=e112]: Web dashboard with stats & logs
+          - generic [ref=e115]: CLI management utility
+          - generic [ref=e118]: tmux real-time monitoring
+        - generic [ref=e119]:
+          - generic [ref=e120]: TypeScript
+          - generic [ref=e121]: Bun
+          - generic [ref=e122]: grammY
+          - generic [ref=e123]: MCP
+          - generic [ref=e124]: PostgreSQL
+          - generic [ref=e125]: pgvector
+          - generic [ref=e126]: React
+          - generic [ref=e127]: Tailwind
+          - generic [ref=e128]: Docker
+        - link "View on GitHub" [ref=e130] [cursor=pointer]:
+          - /url: https://github.com/MrCipherSmith/multiclaude-tg-bot
+          - img [ref=e131]
+          - text: View on GitHub
+      - generic [ref=e133]:
+        - generic [ref=e134]:
+          - heading "openclaude" [level=3] [ref=e135]
+          - generic [ref=e137]:
+            - img [ref=e138]
+            - text: "51"
+        - paragraph [ref=e140]: Claude Code opened to any LLM — OpenAI, Gemini, DeepSeek, Ollama, and 200+ models via OpenAI-compatible API shim.
+        - list [ref=e141]:
+          - listitem [ref=e142]: OpenAI-compatible shim (724 lines)
+          - listitem [ref=e144]: 200+ models supported
+          - listitem [ref=e146]: Provider launch profiles
+          - listitem [ref=e148]: Runtime hardening checks
+        - generic [ref=e150]:
+          - generic [ref=e151]: TypeScript
+          - generic [ref=e152]: Bun
+          - generic [ref=e153]: OpenAI SDK
+        - link "View on GitHub" [ref=e154] [cursor=pointer]:
+          - /url: https://github.com/MrCipherSmith/openclaude
+          - img [ref=e155]
+          - text: View on GitHub
+          - img [ref=e157]
+      - generic [ref=e161]:
+        - generic [ref=e162]:
+          - heading "ecma-mcp" [level=3] [ref=e163]
+          - generic [ref=e165]:
+            - img [ref=e166]
+            - text: "4"
+        - paragraph [ref=e168]: MCP server for frontend developers with automatic documentation indexing, web admin panel, and code review based on ECMAScript standards.
+        - list [ref=e169]:
+          - listitem [ref=e170]: Auto documentation indexing
+          - listitem [ref=e172]: Web admin panel
+          - listitem [ref=e174]: ECMAScript-based code review
+          - listitem [ref=e176]: Scrapy web parsing service
+        - generic [ref=e178]:
+          - generic [ref=e179]: NestJS
+          - generic [ref=e180]: React
+          - generic [ref=e181]: TanStack Query
+          - generic [ref=e182]: Scrapy
+          - generic [ref=e183]: PostgreSQL
+          - generic [ref=e184]: Docker
+        - link "View on GitHub" [ref=e185] [cursor=pointer]:
+          - /url: https://github.com/MrCipherSmith/ecma-mcp
+          - img [ref=e186]
+          - text: View on GitHub
+          - img [ref=e188]
+      - generic [ref=e192]:
+        - generic [ref=e193]:
+          - heading "goodocs-mcp" [level=3] [ref=e194]
+          - generic [ref=e196]:
+            - img [ref=e197]
+            - text: "7"
+        - paragraph [ref=e199]: Open Source MCP server for documentation — async indexing, PostgreSQL storage, semantic search, and AI-powered analysis.
+        - list [ref=e200]:
+          - listitem [ref=e201]: Async indexing with task queue
+          - listitem [ref=e203]: Multi-provider embeddings
+          - listitem [ref=e205]: MCP protocol for AI clients
+          - listitem [ref=e207]: REST API + Swagger docs
+        - generic [ref=e209]:
+          - generic [ref=e210]: NestJS
+          - generic [ref=e211]: TypeORM
+          - generic [ref=e212]: PostgreSQL
+          - generic [ref=e213]: pgvector
+          - generic [ref=e214]: Ollama
+          - generic [ref=e215]: Docker
+        - link "View on GitHub" [ref=e216] [cursor=pointer]:
+          - /url: https://github.com/MrCipherSmith/goodocs-mcp
+          - img [ref=e217]
+          - text: View on GitHub
+          - img [ref=e219]
+  - generic [ref=e224]:
+    - heading "Tech Stack" [level=2] [ref=e225]
+    - paragraph [ref=e226]: The technologies that power every project.
+    - generic [ref=e227]:
+      - generic [ref=e228]:
+        - heading "Languages" [level=3] [ref=e229]
+        - generic [ref=e230]:
+          - generic [ref=e231]: TypeScript
+          - generic [ref=e232]: Python
+      - generic [ref=e233]:
+        - heading "Runtime" [level=3] [ref=e234]
+        - generic [ref=e235]:
+          - generic [ref=e236]: Bun
+          - generic [ref=e237]: Node.js
+      - generic [ref=e238]:
+        - heading "Backend" [level=3] [ref=e239]
+        - generic [ref=e240]:
+          - generic [ref=e241]: NestJS
+          - generic [ref=e242]: MCP SDK
+          - generic [ref=e243]: grammY
+      - generic [ref=e244]:
+        - heading "Frontend" [level=3] [ref=e245]
+        - generic [ref=e246]:
+          - generic [ref=e247]: React
+          - generic [ref=e248]: Tailwind CSS
+          - generic [ref=e249]: Vite
+          - generic [ref=e250]: TanStack Query
+      - generic [ref=e251]:
+        - heading "Database" [level=3] [ref=e252]
+        - generic [ref=e253]:
+          - generic [ref=e254]: PostgreSQL
+          - generic [ref=e255]: pgvector
+          - generic [ref=e256]: TypeORM
+      - generic [ref=e257]:
+        - heading "AI / ML" [level=3] [ref=e258]
+        - generic [ref=e259]:
+          - generic [ref=e260]: Ollama
+          - generic [ref=e261]: OpenAI
+          - generic [ref=e262]: Anthropic
+          - generic [ref=e263]: Google AI
+          - generic [ref=e264]: Groq
+          - generic [ref=e265]: DeepSeek
+      - generic [ref=e266]:
+        - heading "Infrastructure" [level=3] [ref=e267]
+        - generic [ref=e268]:
+          - generic [ref=e269]: Docker
+          - generic [ref=e270]: Docker Compose
+          - generic [ref=e271]: GitHub Actions
+          - generic [ref=e272]: tmux
+          - generic [ref=e273]: Makefile
+  - generic [ref=e275]:
+    - heading "Architecture Philosophy" [level=2] [ref=e276]
+    - paragraph [ref=e277]: Design principles that guide every project decision.
+    - generic [ref=e278]:
+      - generic [ref=e279]:
+        - img [ref=e281]
+        - generic [ref=e286]:
+          - heading "MCP-First" [level=3] [ref=e287]
+          - paragraph [ref=e288]: Model Context Protocol as the standard for AI tool integration. Every project speaks MCP.
+      - generic [ref=e289]:
+        - img [ref=e291]
+        - generic [ref=e294]:
+          - heading "Provider-Agnostic" [level=3] [ref=e295]
+          - paragraph [ref=e296]: Support for OpenAI, Anthropic, Google, Ollama, DeepSeek — no vendor lock-in, ever.
+      - generic [ref=e297]:
+        - img [ref=e299]
+        - generic [ref=e303]:
+          - heading "Docker-First" [level=3] [ref=e304]
+          - paragraph [ref=e305]: Every project launches with one command. Full stack in containers — database, AI, backend.
+      - generic [ref=e306]:
+        - img [ref=e308]
+        - generic [ref=e316]:
+          - heading "Memory & Context" [level=3] [ref=e317]
+          - paragraph [ref=e318]: Semantic search, persistent sessions, project context. AI that remembers what matters.
+      - generic [ref=e319]:
+        - img [ref=e321]
+        - generic [ref=e323]:
+          - heading "Developer Experience" [level=3] [ref=e324]
+          - paragraph [ref=e325]: CLI wizards, inline buttons, dashboards, health endpoints. Tools that respect your time.
+  - generic [ref=e327]:
+    - heading "Activity Timeline" [level=2] [ref=e328]
+    - paragraph [ref=e329]: Six months of building — from documentation servers to full AI infrastructure.
+    - generic [ref=e332]:
+      - generic [ref=e333]:
+        - generic [ref=e335]:
+          - generic [ref=e336]: Nov 2025
+          - generic [ref=e337]: Documentation
+        - heading "goodocs-mcp" [level=3] [ref=e338]
+        - paragraph [ref=e339]: First MCP server for documentation — async indexing, semantic search, multi-provider embeddings.
+      - generic [ref=e340]:
+        - generic [ref=e342]:
+          - generic [ref=e343]: Jan 2026
+          - generic [ref=e344]: Frontend Tools
+        - heading "ecma-mcp" [level=3] [ref=e345]
+        - paragraph [ref=e346]: MCP for frontend developers — auto-indexing, code review, admin panel, Scrapy parsing.
+      - generic [ref=e347]:
+        - generic [ref=e349]:
+          - generic [ref=e350]: Mar 2026
+          - generic [ref=e351]: LLM Infrastructure
+        - heading "openclaude" [level=3] [ref=e352]
+        - paragraph [ref=e353]: Claude Code + any LLM. OpenAI-compatible shim unlocking 200+ models with provider profiles.
+      - generic [ref=e354]:
+        - generic [ref=e356]:
+          - generic [ref=e357]: Apr 2026
+          - generic [ref=e358]: Flagship
+        - heading "multiclaude-tg-bot v1.9.0" [level=3] [ref=e359]
+        - paragraph [ref=e360]: Flagship Telegram MCP bot — multi-session, dual-layer memory, voice, dashboard, CLI monitoring.
+  - generic [ref=e362]:
+    - heading "Let's Build Together" [level=2] [ref=e363]
+    - paragraph [ref=e364]: Open to contributions, collaborations, and interesting projects in AI infrastructure.
+    - generic [ref=e365]:
+      - link "View on GitHub" [ref=e366] [cursor=pointer]:
+        - /url: https://github.com/MrCipherSmith
+        - img [ref=e367]
+        - text: View on GitHub
+      - link "Star a Project" [ref=e369] [cursor=pointer]:
+        - /url: https://github.com/MrCipherSmith/multiclaude-tg-bot
+        - img [ref=e370]
+        - text: Star a Project
+      - link "Telegram" [ref=e372] [cursor=pointer]:
+        - /url: https://t.me/MrCipherSmith
+        - img [ref=e373]
+        - text: Telegram
+  - contentinfo [ref=e376]:
+    - generic [ref=e377]:
+      - generic [ref=e378]: © 2026 MrCipherSmith
+      - generic [ref=e379]: Built with Next.js, Tailwind CSS & Framer Motion
+  - button "Open Next.js Dev Tools" [ref=e385] [cursor=pointer]:
+    - img [ref=e386]

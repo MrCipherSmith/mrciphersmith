@@ -14,9 +14,9 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mrciphersmith.github.io"),
-  title: "MrCipherSmith — AI Infrastructure for Developers",
+  title: "MrCipherSmith",
   description:
-    "Building MCP servers, multi-LLM tooling, and Telegram-powered AI workflows. Open source, Docker-first, provider-agnostic.",
+    "I build the layer between AI and developers. Open source MCP servers, multi-LLM tooling, and Telegram-powered AI workflows.",
   keywords: [
     "MCP",
     "Model Context Protocol",
