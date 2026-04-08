@@ -48,6 +48,47 @@ body {
   background-clip: text;
 }
 
+/* Horizontal scroll layout */
+.horizontal-scroll-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontal-slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .horizontal-scroll-container {
+    flex-direction: row;
+    height: 100vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .horizontal-scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .horizontal-slide {
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+    overflow-y: auto;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .horizontal-slide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* Grain texture overlay */
 body::after {
   content: '';
