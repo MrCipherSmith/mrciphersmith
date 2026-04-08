@@ -7,24 +7,24 @@ import { useRef } from "react";
 const milestones = [
   {
     date: "2025",
-    label: "Начало",
+    label: "Start",
     tag: "Documentation",
     description:
-      "Первый MCP-сервер для документации. Семантический поиск, async индексация, мульти-провайдер embeddings.",
+      "First MCP server for documentation. Semantic search, async indexing, multi-provider embeddings.",
   },
   {
     date: "2026",
-    label: "Инфраструктура",
+    label: "Infrastructure",
     tag: "LLM Layer",
     description:
-      "Claude Code + любой LLM. OpenAI-compatible shim, 200+ моделей, provider profiles.",
+      "Claude Code + any LLM. OpenAI-compatible shim, 200+ models, provider profiles.",
   },
   {
     date: "2026",
-    label: "Платформа",
+    label: "Platform",
     tag: "Flagship",
     description:
-      "Telegram MCP-бот с multi-session, dual-layer memory, voice, dashboard и CLI monitoring.",
+      "Telegram MCP bot with multi-session, dual-layer memory, voice, dashboard and CLI monitoring.",
     highlight: true,
   },
 ];
@@ -42,7 +42,7 @@ export default function Milestones() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          Путь
+          Journey
         </motion.h2>
 
         <div className="space-y-4">

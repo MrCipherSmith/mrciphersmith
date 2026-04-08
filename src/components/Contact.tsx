@@ -21,11 +21,11 @@ export default function Contact() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 bg-indigo-500/4 blur-2xl pointer-events-none" />
 
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4 relative">
-            Давайте строить
+            Let's build together
           </h2>
           <p className="text-[#94a3b8] text-base sm:text-lg leading-relaxed max-w-md mb-10 relative">
-            Открыт к контрибьюциям, коллаборациям и интересным проектам в
-            AI-инфраструктуре.
+            Open to contributions, collaborations, and interesting projects in
+            AI infrastructure.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 relative">

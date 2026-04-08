@@ -8,17 +8,17 @@ const principles = [
   {
     title: "Context",
     description:
-      "AI должен помнить, что вы делали вчера. Не пересказывать документацию — понимать ваш код, ваши решения, ваши паттерны.",
+      "AI should remember what you worked on yesterday. Not just recite docs — understand your code, your decisions, your patterns.",
   },
   {
     title: "Freedom",
     description:
-      "Никакого vendor lock-in. Любая модель, любой провайдер — архитектура не должна зависеть от чужих бизнес-решений.",
+      "No vendor lock-in. Any model, any provider — your architecture should never depend on someone else's business decisions.",
   },
   {
     title: "Simplicity",
     description:
-      "Одна команда для запуска. Если для установки нужно читать три страницы — это не инструмент, это головоломка.",
+      "One command to run. If setup requires reading three pages of docs, it's not a tool — it's a puzzle.",
   },
 ];
 
@@ -35,9 +35,9 @@ export default function Essence() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          Каждый проект начинается с одной проблемы: AI-инструменты не понимают
-          контекст. Они не знают, над чем вы работали вчера, какие решения
-          приняли, и почему. Я строю инфраструктуру, которая это исправляет.
+          Every project starts from the same problem: AI tools don't understand
+          context. They don't know what you worked on yesterday, what decisions
+          you made, or why. I build the infrastructure that fixes this.
         </motion.p>
 
         <div className="space-y-px">

@@ -9,37 +9,37 @@ const capabilities = [
     label: "01",
     title: "Multi-LLM Infrastructure",
     description:
-      "OpenAI, Anthropic, Google, Ollama, DeepSeek — один интерфейс для всех. Переключай модели, не архитектуру.",
+      "OpenAI, Anthropic, Google, Ollama, DeepSeek — one interface for all. Switch models, not architecture.",
   },
   {
     label: "02",
     title: "Semantic Memory",
     description:
-      "pgvector + embeddings. AI помнит контекст проекта, прошлые решения и паттерны — через семантический поиск.",
+      "pgvector + embeddings. AI remembers project context, past decisions and patterns — via semantic search.",
   },
   {
     label: "03",
     title: "MCP Protocol",
     description:
-      "Model Context Protocol как стандарт. Claude Code, Cursor, VS Code — все подключаются через один сервер.",
+      "Model Context Protocol as a standard. Claude Code, Cursor, VS Code — all connect through one server.",
   },
   {
     label: "04",
     title: "Mobile-First AI",
     description:
-      "Управление AI-сессиями через Telegram. Голос, фото, inline-кнопки для approval — AI в кармане.",
+      "Manage AI sessions via Telegram. Voice, photos, inline approval buttons — AI in your pocket.",
   },
   {
     label: "05",
     title: "Async Indexing",
     description:
-      "Документация, кодбазы, знания — всё индексируется асинхронно с отслеживанием прогресса.",
+      "Docs, codebases, knowledge — everything indexed asynchronously with progress tracking.",
   },
   {
     label: "06",
     title: "Docker-First Delivery",
     description:
-      "Каждый проект — одна команда. PostgreSQL, Ollama, backend, dashboard — всё в контейнерах.",
+      "Every project runs with one command. PostgreSQL, Ollama, backend, dashboard — all in containers.",
   },
 ];
 
@@ -65,7 +65,7 @@ export default function Capabilities() {
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Что умеет инфраструктура, которую я строю
+            What the infrastructure I build is capable of
           </motion.p>
         </div>
 
