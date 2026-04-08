@@ -4,16 +4,103 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { ArrowDown } from "lucide-react";
 
-const terminal = [
-  { prompt: true, text: "docker compose up" },
-  { prompt: false, text: "✓  mcp-server    :3000", color: "#4ade80" },
-  { prompt: false, text: "✓  postgres       ready", color: "#4ade80" },
-  { prompt: false, text: "✓  index          4.2k vectors", color: "#4ade80" },
+const nodes = [
+  { id: "ts", label: "TypeScript", x: 12, y: 50, main: false },
+  { id: "mcp", label: "MCP Server", x: 50, y: 50, main: true },
+  { id: "claude", label: "Claude Code", x: 88, y: 20, main: false },
+  { id: "pg", label: "PostgreSQL", x: 88, y: 50, main: false },
+  { id: "tg", label: "Telegram", x: 88, y: 80, main: false },
 ];
+
+const edges = [
+  { path: "M 12 50 L 50 50", delay: 0, dur: 2 },
+  { path: "M 50 50 L 88 20", delay: 0.4, dur: 1.6 },
+  { path: "M 50 50 L 88 50", delay: 0.15, dur: 1.6 },
+  { path: "M 50 50 L 88 80", delay: 0.7, dur: 1.6 },
+];
+
+function TopologyDiagram() {
+  return (
+    <svg viewBox="0 0 100 100" className="w-full h-auto" aria-hidden="true">
+      <defs>
+        <filter id="node-glow">
+          <feGaussianBlur stdDeviation="1.5" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        <filter id="packet-glow">
+          <feGaussianBlur stdDeviation="1" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      {edges.map((e, i) => (
+        <g key={i}>
+          <path
+            d={e.path}
+            fill="none"
+            stroke="rgba(99,102,241,0.18)"
+            strokeWidth="0.4"
+            strokeDasharray="2.5 2"
+          />
+          <circle r="1.2" fill="#818cf8" filter="url(#packet-glow)">
+            <animateMotion
+              dur={`${e.dur}s`}
+              repeatCount="indefinite"
+              begin={`${e.delay}s`}
+              path={e.path}
+            />
+          </circle>
+        </g>
+      ))}
+
+      {nodes.map((n) => (
+        <g key={n.id}>
+          {n.main && (
+            <circle
+              cx={n.x} cy={n.y} r="8"
+              fill="rgba(99,102,241,0.06)"
+              stroke="rgba(99,102,241,0.15)"
+              strokeWidth="0.3"
+            />
+          )}
+          <circle
+            cx={n.x} cy={n.y}
+            r={n.main ? 5 : 3.5}
+            fill={n.main ? "rgba(99,102,241,0.15)" : "rgba(13,13,20,0.9)"}
+            stroke={n.main ? "rgba(129,140,248,0.6)" : "rgba(99,102,241,0.3)"}
+            strokeWidth="0.5"
+            filter={n.main ? "url(#node-glow)" : undefined}
+          />
+          <circle
+            cx={n.x} cy={n.y}
+            r={n.main ? 2 : 1.2}
+            fill={n.main ? "#818cf8" : "rgba(99,102,241,0.55)"}
+          />
+          <text
+            x={n.x}
+            y={n.y + (n.main ? 12 : 9)}
+            textAnchor="middle"
+            fill="#94a3b8"
+            fontSize={n.main ? "4" : "3.5"}
+            fontFamily="'JetBrains Mono', monospace"
+            opacity="0.75"
+          >
+            {n.label}
+          </text>
+        </g>
+      ))}
+    </svg>
+  );
+}
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
-  const [visibleLines, setVisibleLines] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -21,32 +108,25 @@ export default function Hero() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setVisibleLines((prev) => {
-        if (prev < terminal.length) return prev + 1;
-        clearInterval(timer);
-        return prev;
-      });
-    }, 400);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6">
+      {/* Dot grid */}
       <div
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(99,102,241,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.06) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-          transform: `translateY(${scrollY * 0.08}px)`,
-          maskImage: "radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%)",
-          WebkitMaskImage: "radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%)",
+            "radial-gradient(rgba(99,102,241,0.18) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+          transform: `translateY(${scrollY * 0.07}px)`,
+          maskImage:
+            "radial-gradient(ellipse 75% 75% at 50% 45%, black 20%, transparent 100%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 75% 75% at 50% 45%, black 20%, transparent 100%)",
         }}
       />
 
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-indigo-500/8 rounded-full blur-[140px] pointer-events-none" />
+      {/* Ambient glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-indigo-500/6 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="relative z-10 max-w-3xl mx-auto text-center">
         <motion.div
@@ -55,7 +135,7 @@ export default function Hero() {
           animate={{ opacity: 1, scaleX: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="w-12 h-px bg-gradient-to-r from-transparent via-indigo-500/60 to-transparent mx-auto" />
+          <div className="w-10 h-px bg-gradient-to-r from-transparent via-indigo-400/50 to-transparent mx-auto" />
         </motion.div>
 
         <motion.h1
@@ -75,65 +155,31 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          Tools that let AI understand your codebase, remember your context, and
-          work alongside you — not against you.
+          Tools that let AI understand your codebase, remember your context,
+          and work alongside you — not against you.
         </motion.p>
 
         <motion.div
-          className="mx-auto w-full max-w-md text-left"
+          className="mx-auto w-full max-w-sm"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <div className="rounded-xl border border-[#6366f1]/15 bg-[#0d0d14] overflow-hidden shadow-[0_0_40px_rgba(99,102,241,0.05)]">
-            <div className="flex items-center gap-1.5 px-4 py-3 border-b border-[#6366f1]/10 bg-[#0a0a0f]/60">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]/60" />
-              <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]/60" />
-              <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]/60" />
-              <span className="ml-3 text-xs font-mono text-[#94a3b8]/50">terminal</span>
-            </div>
-            <div className="p-5 font-mono text-xs space-y-2 min-h-[100px]">
-              {terminal.slice(0, visibleLines).map((line, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.2 }}
-                  className="flex items-center gap-2"
-                >
-                  {line.prompt ? (
-                    <>
-                      <span className="text-indigo-400">$</span>
-                      <span className="text-[#e2e8f0]">{line.text}</span>
-                    </>
-                  ) : (
-                    <span style={{ color: line.color ?? "#94a3b8" }}>
-                      {line.text}
-                    </span>
-                  )}
-                </motion.div>
-              ))}
-              {visibleLines === terminal.length && (
-                <motion.div
-                  className="flex items-center gap-2"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                >
-                  <span className="text-indigo-400">$</span>
-                  <span className="w-2 h-3.5 bg-indigo-400/70 animate-pulse" />
-                </motion.div>
-              )}
-            </div>
+          <div className="rounded-2xl border border-[#6366f1]/15 bg-[#0d0d14]/70 px-6 pt-6 pb-4 backdrop-blur-sm shadow-[0_0_60px_rgba(99,102,241,0.06)]">
+            <TopologyDiagram />
+            <p className="text-center text-[10px] font-mono text-[#94a3b8]/35 mt-2 tracking-wider">
+              architecture
+            </p>
           </div>
         </motion.div>
       </div>
 
       <motion.a
         href="#essence"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-[#94a3b8]/50 hover:text-indigo-400 transition-colors"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-[#94a3b8]/40 hover:text-indigo-400 transition-colors"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 8, 0] }}
-        transition={{ delay: 1.8, duration: 2, repeat: Infinity }}
+        transition={{ delay: 1.6, duration: 2, repeat: Infinity }}
       >
         <ArrowDown className="w-5 h-5" />
       </motion.a>
