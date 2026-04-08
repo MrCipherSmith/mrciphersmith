@@ -27,10 +27,10 @@ export default function Essence() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="essence" className="py-32 px-6" ref={ref}>
+    <section id="essence" className="py-24 px-6" ref={ref}>
       <div className="max-w-4xl mx-auto">
         <motion.p
-          className="text-[#94a3b8] text-lg sm:text-xl leading-relaxed mb-16 max-w-2xl"
+          className="text-[#94a3b8] text-lg sm:text-xl leading-relaxed mb-20 max-w-2xl"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -40,28 +40,31 @@ export default function Essence() {
           приняли, и почему. Я строю инфраструктуру, которая это исправляет.
         </motion.p>
 
-        <div className="space-y-0">
+        <div className="space-y-px">
           {principles.map((p, i) => (
             <motion.div
               key={p.title}
-              className="py-8 border-t border-[#6366f1]/10"
+              className="group relative flex gap-8 py-8 border-t border-[#6366f1]/10 hover:border-[#6366f1]/25 transition-colors"
               initial={{ opacity: 0, x: -20 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
+              transition={{ duration: 0.5, delay: i * 0.12 }}
             >
-              <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-8">
-                <span className="text-sm font-mono text-indigo-400/70 tabular-nums sm:w-32 sm:flex-shrink-0 sm:pt-0.5">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full border border-[#6366f1]/20 bg-[#6366f1]/8 flex items-center justify-center group-hover:border-[#6366f1]/40 group-hover:bg-[#6366f1]/12 transition-all">
+                <span className="text-xs font-mono text-indigo-400/80">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">{p.title}</h3>
-                  <p className="text-[#94a3b8] text-sm sm:text-base leading-relaxed max-w-lg">
-                    {p.description}
-                  </p>
-                </div>
+              </div>
+              <div className="pt-0.5">
+                <h3 className="text-lg font-semibold mb-2 group-hover:text-indigo-200 transition-colors">
+                  {p.title}
+                </h3>
+                <p className="text-[#94a3b8] text-sm sm:text-base leading-relaxed max-w-lg">
+                  {p.description}
+                </p>
               </div>
             </motion.div>
           ))}
+          <div className="border-t border-[#6366f1]/10" />
         </div>
       </div>
     </section>
