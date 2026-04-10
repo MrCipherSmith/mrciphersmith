@@ -7,6 +7,11 @@ import Image from "next/image";
 // Core Ideas
 const concepts = [
   {
+    name: "GoodAI Foundations",
+    desc: "Scalable architecture and base framework for robust, general autonomic reasoning tasks.",
+    tag: "Framework", tagColor: "text-[#30b171]"
+  },
+  {
     name: "Multi-Agent Orchestration",
     desc: "Coordinating autonomous agents to solve complex workflows with shared memory structures.",
     tag: "Orchestration", tagColor: "text-[#30b171]"
@@ -94,7 +99,7 @@ function TerminalPane({ hoveredItem }: { hoveredItem: string | null }) {
   }, []);
 
   return (
-    <div className="bg-[#10131A]/80 border border-[#7673DE]/20 rounded-xl p-4 font-mono text-xs text-[#30b171] h-full flex flex-col overflow-hidden backdrop-blur-md relative shadow-[inset_0_0_20px_rgba(48,177,113,0.05)]">
+    <div className="bg-[#10131A]/80 border border-[#7673DE]/20 rounded-xl p-4 sm:p-6 font-mono text-sm sm:text-base text-[#30b171] h-full flex flex-col overflow-hidden backdrop-blur-md relative shadow-[inset_0_0_20px_rgba(48,177,113,0.05)]">
       <div className="flex items-center space-x-2 border-b border-[#7673DE]/20 pb-3 mb-3 shrink-0">
         <div className="w-3 h-3 rounded-full bg-red-500/50" />
         <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
@@ -123,22 +128,22 @@ function IdentityPane() {
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_14px]" />
       
       <motion.div 
-        className="w-48 h-48 sm:w-64 sm:h-64 relative z-10"
-        animate={{ y: [0, -8, 0] }}
+        className="w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 relative z-10"
+        animate={{ y: [0, -10, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       >
         <Image 
           src="/mrciphersmith/keryx_avatar.png" 
           alt="Keryx Magritte Avatar" 
           fill
-          className="object-cover rounded-3xl drop-shadow-[0_15px_35px_rgba(118,115,222,0.2)] brightness-[0.8] contrast-[1.05] saturate-[0.85]" 
+          className="object-cover rounded-3xl drop-shadow-[0_15px_35px_rgba(118,115,222,0.25)] brightness-[0.8] contrast-[1.05] saturate-[0.85]" 
         />
       </motion.div>
 
-      <div className="z-10 mt-6 text-center">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-2 font-mono">Keryx</h1>
-        <p className="text-[#7673DE] font-mono uppercase tracking-[0.2em] text-sm">MrCipherSmith</p>
-        <p className="text-[#9ca3af] mt-4 text-sm max-w-sm border-t border-[#7673DE]/20 pt-4">
+      <div className="z-10 mt-8 lg:mt-12 text-center max-w-lg px-4">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-2 font-mono drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">Keryx</h1>
+        <p className="text-[#7673DE] font-mono uppercase tracking-[0.25em] text-sm lg:text-base mb-6">MrCipherSmith</p>
+        <p className="text-[#9ca3af] mt-4 text-base lg:text-lg border-t border-[#7673DE]/20 pt-6 leading-relaxed">
           Architecting open-source multi-agent systems and deep LLM integration protocols.
         </p>
       </div>
@@ -164,11 +169,11 @@ function ModulesPane({ setHovered }: { setHovered: (s: string | null) => void })
         >
           {/* Edge highlight injection on hover */}
           <div className="absolute top-0 right-0 h-full w-[2px] bg-[#7673DE] opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_10px_rgba(118,115,222,1)]" />
-          <div>
-            <h3 className="text-white font-mono font-bold mb-1 group-hover:text-[#7673DE] transition-colors">{concept.name}</h3>
-            <p className="text-[#9ca3af] text-xs max-w-xs">{concept.desc}</p>
+          <div className="pr-4">
+            <h3 className="text-lg lg:text-xl text-white font-mono font-bold mb-2 group-hover:text-[#7673DE] transition-colors">{concept.name}</h3>
+            <p className="text-[#9ca3af] text-sm lg:text-base leading-relaxed">{concept.desc}</p>
           </div>
-          <span className={`text-[10px] font-mono px-2 py-1 rounded bg-[#0a0a0f]/80 ml-4 border border-[rgba(118,115,222,0.1)] ${concept.tagColor}`}>
+          <span className={`text-[11px] lg:text-xs font-mono px-3 py-1.5 rounded-md bg-[#0a0a0f]/80 ml-2 border border-[rgba(118,115,222,0.1)] ${concept.tagColor} whitespace-nowrap shrink-0`}>
             {concept.tag}
           </span>
         </motion.div>
@@ -181,21 +186,21 @@ export default function OSDesktop() {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
   return (
-    <main className="min-h-screen bg-[#0C0E14] text-white p-4 sm:p-8 flex items-center justify-center overflow-x-hidden font-sans">
-      <div className="w-full max-w-7xl h-auto md:h-[85vh] min-h-[600px] grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 relative z-10">
+    <main className="min-h-screen bg-[#0C0E14] text-white p-4 sm:p-6 lg:p-10 flex items-center justify-center overflow-x-hidden font-sans">
+      <div className="w-full max-w-[1600px] h-auto xl:h-[85vh] min-h-[800px] grid grid-cols-1 xl:grid-cols-12 gap-6 lg:gap-8 xl:gap-8 relative z-10 py-10 xl:py-0">
         
         {/* Left Column: Terminal */}
-        <div className="md:col-span-3 lg:col-span-3 h-64 md:h-[85vh] md:max-h-full min-h-0 order-2 md:order-1">
+        <div className="xl:col-span-3 h-[320px] sm:h-[400px] xl:h-[85vh] xl:max-h-full min-h-0 order-2 xl:order-1">
           <TerminalPane hoveredItem={hoveredProject} />
         </div>
 
         {/* Center Canvas: Identity */}
-        <div className="md:col-span-5 lg:col-span-5 h-[500px] md:h-full order-1 md:order-2">
+        <div className="xl:col-span-5 h-[500px] sm:h-[650px] xl:h-full order-1 xl:order-2">
           <IdentityPane />
         </div>
 
         {/* Right Column: Modules */}
-        <div className="md:col-span-4 lg:col-span-4 h-full order-3 md:order-3">
+        <div className="xl:col-span-4 h-full order-3 xl:order-3">
           <ModulesPane setHovered={setHoveredProject} />
         </div>
 
