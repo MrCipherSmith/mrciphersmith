@@ -128,7 +128,7 @@ function IdentityPane() {
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       >
         <Image 
-          src="/keryx_avatar.png" 
+          src="/mrciphersmith/keryx_avatar.png" 
           alt="Keryx Magritte Avatar" 
           fill
           className="object-cover rounded-3xl drop-shadow-[0_15px_35px_rgba(118,115,222,0.2)] brightness-[0.8] contrast-[1.05] saturate-[0.85]" 
