@@ -1,0 +1,167 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "mrciphersmith" [ref=e4] [cursor=pointer]:
+        - /url: "#"
+      - navigation "Main navigation" [ref=e5]:
+        - link "About" [ref=e6] [cursor=pointer]:
+          - /url: "#essence"
+        - link "Capabilities" [ref=e7] [cursor=pointer]:
+          - /url: "#capabilities"
+        - link "Journey" [ref=e8] [cursor=pointer]:
+          - /url: "#milestones"
+        - link "Contact" [ref=e9] [cursor=pointer]:
+          - /url: "#contact"
+  - generic [ref=e10]:
+    - generic [ref=e12]:
+      - generic [ref=e14]:
+        - heading "I build the layer between AI and developers" [level=1] [ref=e15]:
+          - text: I build the layer between
+          - text: AI and developers
+        - paragraph [ref=e16]: Tools that let AI understand your codebase, remember your context, and work alongside you — not against you.
+        - generic [ref=e18]:
+          - img [ref=e19]:
+            - generic [ref=e33]: TypeScript
+            - generic [ref=e38]: MCP Server
+            - generic [ref=e42]: Claude Code
+            - generic [ref=e46]: PostgreSQL
+            - generic [ref=e50]: Telegram
+          - paragraph [ref=e51]: architecture
+      - link [ref=e52] [cursor=pointer]:
+        - /url: "#essence"
+        - img [ref=e53]
+    - generic [ref=e56]:
+      - paragraph [ref=e57]: "Every project starts from the same problem: AI tools don't understand context. They don't know what you worked on yesterday, what decisions you made, or why. I build the infrastructure that fixes this."
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - generic [ref=e61]: "01"
+          - generic [ref=e62]:
+            - heading "Context" [level=3] [ref=e63]
+            - paragraph [ref=e64]: AI should remember what you worked on yesterday. Not just recite docs — understand your code, your decisions, your patterns.
+        - generic [ref=e65]:
+          - generic [ref=e67]: "02"
+          - generic [ref=e68]:
+            - heading "Freedom" [level=3] [ref=e69]
+            - paragraph [ref=e70]: No vendor lock-in. Any model, any provider — your architecture should never depend on someone else's business decisions.
+        - generic [ref=e71]:
+          - generic [ref=e73]: "03"
+          - generic [ref=e74]:
+            - heading "Simplicity" [level=3] [ref=e75]
+            - paragraph [ref=e76]: One command to run. If setup requires reading three pages of docs, it's not a tool — it's a puzzle.
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - generic [ref=e81]: 0+
+          - generic [ref=e82]: models
+        - generic [ref=e83]:
+          - generic [ref=e84]: "0"
+          - generic [ref=e85]: vectors
+        - generic [ref=e86]:
+          - generic [ref=e87]: "0"
+          - generic [ref=e88]: command
+    - generic [ref=e90]:
+      - generic [ref=e91]:
+        - heading "Capabilities" [level=2] [ref=e92]
+        - paragraph [ref=e93]: What the infrastructure I build is capable of
+      - generic [ref=e94]:
+        - generic [ref=e95]:
+          - generic [ref=e96]: "01"
+          - heading "Multi-LLM Infrastructure" [level=3] [ref=e97]
+          - paragraph [ref=e98]: OpenAI, Anthropic, Google, Ollama, DeepSeek — one interface for all. Switch models, not architecture.
+        - generic [ref=e99]:
+          - generic [ref=e100]: "02"
+          - heading "Semantic Memory" [level=3] [ref=e101]
+          - paragraph [ref=e102]: pgvector + embeddings. AI remembers project context, past decisions and patterns — via semantic search.
+        - generic [ref=e103]:
+          - generic [ref=e104]: "03"
+          - heading "MCP Protocol" [level=3] [ref=e105]
+          - paragraph [ref=e106]: Model Context Protocol as a standard. Claude Code, Cursor, VS Code — all connect through one server.
+        - generic [ref=e107]:
+          - generic [ref=e108]: "04"
+          - heading "Mobile-First AI" [level=3] [ref=e109]
+          - paragraph [ref=e110]: Manage AI sessions via Telegram. Voice, photos, inline approval buttons — AI in your pocket.
+        - generic [ref=e111]:
+          - generic [ref=e112]: "05"
+          - heading "Async Indexing" [level=3] [ref=e113]
+          - paragraph [ref=e114]: Docs, codebases, knowledge — everything indexed asynchronously with progress tracking.
+        - generic [ref=e115]:
+          - generic [ref=e116]: "06"
+          - heading "Docker-First Delivery" [level=3] [ref=e117]
+          - paragraph [ref=e118]: Every project runs with one command. PostgreSQL, Ollama, backend, dashboard — all in containers.
+    - generic [ref=e120]:
+      - paragraph [ref=e121]: Stack
+      - generic [ref=e122]:
+        - generic [ref=e123]:
+          - generic [ref=e124]: Languages & Runtime
+          - generic [ref=e125]:
+            - generic [ref=e126]: TypeScript
+            - generic [ref=e127]: Bun
+            - generic [ref=e128]: Node.js
+        - generic [ref=e129]:
+          - generic [ref=e130]: Backend
+          - generic [ref=e131]:
+            - generic [ref=e132]: NestJS
+            - generic [ref=e133]: PostgreSQL
+            - generic [ref=e134]: pgvector
+            - generic [ref=e135]: TypeORM
+        - generic [ref=e136]:
+          - generic [ref=e137]: AI / MCP
+          - generic [ref=e138]:
+            - generic [ref=e139]: MCP
+            - generic [ref=e140]: OpenAI SDK
+            - generic [ref=e141]: Anthropic
+            - generic [ref=e142]: Ollama
+        - generic [ref=e143]:
+          - generic [ref=e144]: Frontend
+          - generic [ref=e145]:
+            - generic [ref=e146]: React
+            - generic [ref=e147]: Tailwind CSS
+            - generic [ref=e148]: TanStack Query
+        - generic [ref=e149]:
+          - generic [ref=e150]: Infrastructure
+          - generic [ref=e151]:
+            - generic [ref=e152]: Docker
+            - generic [ref=e153]: Docker Compose
+            - generic [ref=e154]: Scrapy
+    - generic [ref=e156]:
+      - heading "Journey" [level=2] [ref=e157]
+      - generic [ref=e158]:
+        - generic [ref=e159]:
+          - generic [ref=e160]:
+            - generic [ref=e161]:
+              - generic [ref=e162]: "2025"
+              - generic [ref=e163]: Start
+            - generic [ref=e164]: Documentation
+          - paragraph [ref=e165]: First MCP server for documentation. Semantic search, async indexing, multi-provider embeddings.
+        - generic [ref=e166]:
+          - generic [ref=e167]:
+            - generic [ref=e168]:
+              - generic [ref=e169]: "2026"
+              - generic [ref=e170]: Infrastructure
+            - generic [ref=e171]: LLM Layer
+          - paragraph [ref=e172]: Claude Code + any LLM. OpenAI-compatible shim, 200+ models, provider profiles.
+        - generic [ref=e173]:
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - generic [ref=e176]: "2026"
+              - generic [ref=e177]: Platform
+            - generic [ref=e178]: Flagship
+          - paragraph [ref=e179]: Telegram MCP bot with multi-session, dual-layer memory, voice, dashboard and CLI monitoring.
+    - generic [ref=e180]:
+      - generic [ref=e182]:
+        - heading "Let's build together" [level=2] [ref=e184]
+        - paragraph [ref=e185]: Open to contributions, collaborations, and interesting projects in AI infrastructure.
+        - generic [ref=e186]:
+          - link "GitHub" [ref=e187] [cursor=pointer]:
+            - /url: https://github.com/MrCipherSmith
+            - img [ref=e188]
+            - text: GitHub
+          - link "Telegram" [ref=e190] [cursor=pointer]:
+            - /url: https://t.me/MrCipherSmith
+            - img [ref=e191]
+            - text: Telegram
+      - contentinfo [ref=e193]:
+        - generic [ref=e194]:
+          - generic [ref=e195]: © 2026
+          - generic [ref=e196]: open source
+  - button "Open Next.js Dev Tools" [ref=e202] [cursor=pointer]:
+    - img [ref=e203]

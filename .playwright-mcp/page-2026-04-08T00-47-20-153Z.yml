@@ -1,0 +1,148 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "mrciphersmith" [ref=e4] [cursor=pointer]:
+        - /url: "#"
+      - navigation "Main navigation" [ref=e5]:
+        - link "Суть" [ref=e6] [cursor=pointer]:
+          - /url: "#essence"
+        - link "Возможности" [ref=e7] [cursor=pointer]:
+          - /url: "#capabilities"
+        - link "Путь" [ref=e8] [cursor=pointer]:
+          - /url: "#milestones"
+        - link "Контакт" [ref=e9] [cursor=pointer]:
+          - /url: "#contact"
+  - generic [ref=e10]:
+    - generic [ref=e12]:
+      - heading "I build the layer between AI and developers" [level=1] [ref=e13]:
+        - text: I build the layer between
+        - text: AI and developers
+      - paragraph [ref=e14]: Tools that let AI understand your codebase, remember your context, and work alongside you — not against you.
+      - generic [ref=e21]: terminal
+    - link [ref=e23] [cursor=pointer]:
+      - /url: "#essence"
+      - img [ref=e24]
+  - generic [ref=e27]:
+    - paragraph [ref=e28]: "Каждый проект начинается с одной проблемы: AI-инструменты не понимают контекст. Они не знают, над чем вы работали вчера, какие решения приняли, и почему. Я строю инфраструктуру, которая это исправляет."
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e32]: "01"
+        - generic [ref=e33]:
+          - heading "Context" [level=3] [ref=e34]
+          - paragraph [ref=e35]: AI должен помнить, что вы делали вчера. Не пересказывать документацию — понимать ваш код, ваши решения, ваши паттерны.
+      - generic [ref=e36]:
+        - generic [ref=e38]: "02"
+        - generic [ref=e39]:
+          - heading "Freedom" [level=3] [ref=e40]
+          - paragraph [ref=e41]: Никакого vendor lock-in. Любая модель, любой провайдер — архитектура не должна зависеть от чужих бизнес-решений.
+      - generic [ref=e42]:
+        - generic [ref=e44]: "03"
+        - generic [ref=e45]:
+          - heading "Simplicity" [level=3] [ref=e46]
+          - paragraph [ref=e47]: Одна команда для запуска. Если для установки нужно читать три страницы — это не инструмент, это головоломка.
+  - generic [ref=e50]:
+    - generic [ref=e51]:
+      - heading "Capabilities" [level=2] [ref=e52]
+      - paragraph [ref=e53]: Что умеет инфраструктура, которую я строю
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - generic [ref=e56]: "01"
+        - heading "Multi-LLM Infrastructure" [level=3] [ref=e57]
+        - paragraph [ref=e58]: OpenAI, Anthropic, Google, Ollama, DeepSeek — один интерфейс для всех. Переключай модели, не архитектуру.
+      - generic [ref=e59]:
+        - generic [ref=e60]: "02"
+        - heading "Semantic Memory" [level=3] [ref=e61]
+        - paragraph [ref=e62]: pgvector + embeddings. AI помнит контекст проекта, прошлые решения и паттерны — через семантический поиск.
+      - generic [ref=e63]:
+        - generic [ref=e64]: "03"
+        - heading "MCP Protocol" [level=3] [ref=e65]
+        - paragraph [ref=e66]: Model Context Protocol как стандарт. Claude Code, Cursor, VS Code — все подключаются через один сервер.
+      - generic [ref=e67]:
+        - generic [ref=e68]: "04"
+        - heading "Mobile-First AI" [level=3] [ref=e69]
+        - paragraph [ref=e70]: Управление AI-сессиями через Telegram. Голос, фото, inline-кнопки для approval — AI в кармане.
+      - generic [ref=e71]:
+        - generic [ref=e72]: "05"
+        - heading "Async Indexing" [level=3] [ref=e73]
+        - paragraph [ref=e74]: Документация, кодбазы, знания — всё индексируется асинхронно с отслеживанием прогресса.
+      - generic [ref=e75]:
+        - generic [ref=e76]: "06"
+        - heading "Docker-First Delivery" [level=3] [ref=e77]
+        - paragraph [ref=e78]: Каждый проект — одна команда. PostgreSQL, Ollama, backend, dashboard — всё в контейнерах.
+  - generic [ref=e80]:
+    - paragraph [ref=e81]: Stack
+    - generic [ref=e82]:
+      - generic [ref=e83]:
+        - generic [ref=e84]: Languages & Runtime
+        - generic [ref=e85]:
+          - generic [ref=e86]: TypeScript
+          - generic [ref=e87]: Bun
+          - generic [ref=e88]: Node.js
+      - generic [ref=e89]:
+        - generic [ref=e90]: Backend
+        - generic [ref=e91]:
+          - generic [ref=e92]: NestJS
+          - generic [ref=e93]: PostgreSQL
+          - generic [ref=e94]: pgvector
+          - generic [ref=e95]: TypeORM
+      - generic [ref=e96]:
+        - generic [ref=e97]: AI / MCP
+        - generic [ref=e98]:
+          - generic [ref=e99]: MCP
+          - generic [ref=e100]: OpenAI SDK
+          - generic [ref=e101]: Anthropic
+          - generic [ref=e102]: Ollama
+      - generic [ref=e103]:
+        - generic [ref=e104]: Frontend
+        - generic [ref=e105]:
+          - generic [ref=e106]: React
+          - generic [ref=e107]: Tailwind CSS
+          - generic [ref=e108]: TanStack Query
+      - generic [ref=e109]:
+        - generic [ref=e110]: Infrastructure
+        - generic [ref=e111]:
+          - generic [ref=e112]: Docker
+          - generic [ref=e113]: Docker Compose
+          - generic [ref=e114]: Scrapy
+  - generic [ref=e116]:
+    - heading "Путь" [level=2] [ref=e117]
+    - generic [ref=e118]:
+      - generic [ref=e119]:
+        - generic [ref=e120]:
+          - generic [ref=e121]:
+            - generic [ref=e122]: "2025"
+            - generic [ref=e123]: Начало
+          - generic [ref=e124]: Documentation
+        - paragraph [ref=e125]: Первый MCP-сервер для документации. Семантический поиск, async индексация, мульти-провайдер embeddings.
+      - generic [ref=e126]:
+        - generic [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e129]: "2026"
+            - generic [ref=e130]: Инфраструктура
+          - generic [ref=e131]: LLM Layer
+        - paragraph [ref=e132]: Claude Code + любой LLM. OpenAI-compatible shim, 200+ моделей, provider profiles.
+      - generic [ref=e133]:
+        - generic [ref=e134]:
+          - generic [ref=e135]:
+            - generic [ref=e136]: "2026"
+            - generic [ref=e137]: Платформа
+          - generic [ref=e138]: Flagship
+        - paragraph [ref=e139]: Telegram MCP-бот с multi-session, dual-layer memory, voice, dashboard и CLI monitoring.
+  - generic [ref=e142]:
+    - heading "Давайте строить" [level=2] [ref=e144]
+    - paragraph [ref=e145]: Открыт к контрибьюциям, коллаборациям и интересным проектам в AI-инфраструктуре.
+    - generic [ref=e146]:
+      - link "GitHub" [ref=e147] [cursor=pointer]:
+        - /url: https://github.com/MrCipherSmith
+        - img [ref=e148]
+        - text: GitHub
+      - link "Telegram" [ref=e150] [cursor=pointer]:
+        - /url: https://t.me/MrCipherSmith
+        - img [ref=e151]
+        - text: Telegram
+  - contentinfo [ref=e153]:
+    - generic [ref=e154]:
+      - generic [ref=e155]: © 2026
+      - generic [ref=e156]: open source
+  - button "Open Next.js Dev Tools" [ref=e162] [cursor=pointer]:
+    - img [ref=e163]

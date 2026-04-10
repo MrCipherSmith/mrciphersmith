@@ -4,34 +4,12 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { ArrowDown } from "lucide-react";
 
-const nodes = [
-  { id: "ts", label: "TypeScript", x: 12, y: 50, main: false },
-  { id: "mcp", label: "MCP Server", x: 50, y: 50, main: true },
-  { id: "claude", label: "Claude Code", x: 88, y: 20, main: false },
-  { id: "pg", label: "PostgreSQL", x: 88, y: 50, main: false },
-  { id: "tg", label: "Telegram", x: 88, y: 80, main: false },
-];
-
-const edges = [
-  { path: "M 12 50 L 50 50", delay: 0, dur: 2 },
-  { path: "M 50 50 L 88 20", delay: 0.4, dur: 1.6 },
-  { path: "M 50 50 L 88 50", delay: 0.15, dur: 1.6 },
-  { path: "M 50 50 L 88 80", delay: 0.7, dur: 1.6 },
-];
-
-function TopologyDiagram() {
+function KeryxLogo() {
   return (
-    <svg viewBox="0 0 100 100" className="w-full h-auto" aria-hidden="true">
+    <svg viewBox="0 0 200 200" className="w-full h-auto drop-shadow-2xl" aria-hidden="true" style={{ filter: 'drop-shadow(0px 10px 20px rgba(118, 115, 222, 0.2))' }}>
       <defs>
-        <filter id="node-glow">
-          <feGaussianBlur stdDeviation="1.5" result="blur" />
-          <feMerge>
-            <feMergeNode in="blur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-        <filter id="packet-glow">
-          <feGaussianBlur stdDeviation="1" result="blur" />
+        <filter id="box-glow">
+          <feGaussianBlur stdDeviation="3" result="blur" />
           <feMerge>
             <feMergeNode in="blur" />
             <feMergeNode in="SourceGraphic" />
@@ -39,62 +17,32 @@ function TopologyDiagram() {
         </filter>
       </defs>
 
-      {edges.map((e, i) => (
-        <g key={i}>
-          <path
-            d={e.path}
-            fill="none"
-            stroke="rgba(99,102,241,0.18)"
-            strokeWidth="0.4"
-            strokeDasharray="2.5 2"
-          />
-          <circle r="1.2" fill="#818cf8" filter="url(#packet-glow)">
-            <animateMotion
-              dur={`${e.dur}s`}
-              repeatCount="indefinite"
-              begin={`${e.delay}s`}
-              path={e.path}
-            />
-          </circle>
-        </g>
-      ))}
+      {/* Silhouette Shoulders */}
+      <path d="M 30 190 C 40 140, 70 110, 100 110 C 130 110, 160 140, 170 190 Z" fill="#151921" />
+      
+      {/* Head / Face base */}
+      <rect x="70" y="80" width="60" height="70" rx="10" fill="#151921" />
+      
+      {/* Hat Brim */}
+      <path d="M 40 75 Q 100 85 160 75 Q 165 72 160 68 Q 100 78 40 68 Q 35 72 40 75 Z" fill="#151921" />
+      {/* Hat Top */}
+      <path d="M 65 70 L 70 20 Q 100 10 130 20 L 135 70 Z" fill="#151921" />
 
-      {nodes.map((n) => (
-        <g key={n.id}>
-          {n.main && (
-            <circle
-              cx={n.x} cy={n.y} r="8"
-              fill="rgba(99,102,241,0.06)"
-              stroke="rgba(99,102,241,0.15)"
-              strokeWidth="0.3"
-            />
-          )}
-          <circle
-            cx={n.x} cy={n.y}
-            r={n.main ? 5 : 3.5}
-            fill={n.main ? "rgba(99,102,241,0.15)" : "rgba(13,13,20,0.9)"}
-            stroke={n.main ? "rgba(129,140,248,0.6)" : "rgba(99,102,241,0.3)"}
-            strokeWidth="0.5"
-            filter={n.main ? "url(#node-glow)" : undefined}
-          />
-          <circle
-            cx={n.x} cy={n.y}
-            r={n.main ? 2 : 1.2}
-            fill={n.main ? "#818cf8" : "rgba(99,102,241,0.55)"}
-          />
-          <text
-            x={n.x}
-            y={n.y + (n.main ? 12 : 9)}
-            textAnchor="middle"
-            fill="#94a3b8"
-            fontSize={n.main ? "4" : "3.5"}
-            fontFamily="'JetBrains Mono', monospace"
-            opacity="0.75"
-          >
-            {n.label}
-          </text>
-        </g>
-      ))}
+      {/* Face Code Window */}
+      <rect x="72" y="82" width="56" height="56" rx="8" fill="#7673DE" />
+      
+      {/* Bracket { */}
+      <text x="75" y="122" fill="#1e232e" fontSize="38" fontFamily="monospace" fontWeight="bold">{"{"}</text>
+      
+      {/* Dots */}
+      <circle cx="92" cy="110" r="4.5" fill="#30b171" />
+      <circle cx="102" cy="110" r="4.5" fill="#e07849" />
+      <circle cx="112" cy="110" r="4.5" fill="#e8bb5c" />
+      
+      {/* Bracket } */}
+      <text x="114" y="122" fill="#1e232e" fontSize="38" fontFamily="monospace" fontWeight="bold">{"}"}</text>
+      
+      <text x="100" y="170" fill="#FFFFFF" opacity="0.9" fontSize="24" fontFamily="sans-serif" textAnchor="middle" fontWeight="bold">Keryx</text>
     </svg>
   );
 }
@@ -144,19 +92,17 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
         >
-          I build the layer between
-          <br />
-          <span className="gradient-text">AI and developers</span>
+          MrCipherSmith <br />
+          <span className="text-[#7673DE]">&gt; AI Tooling Engineer_</span>
         </motion.h1>
 
         <motion.p
-          className="text-lg sm:text-xl text-[#94a3b8] max-w-xl mx-auto mb-14 leading-relaxed"
+          className="text-lg sm:text-xl text-[#9ca3af] max-w-xl mx-auto mb-14 leading-relaxed font-mono"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          Tools that let AI understand your codebase, remember your context,
-          and work alongside you — not against you.
+          Building open-source multi-agent systems, deep LLM integrations, and advanced MCP servers.
         </motion.p>
 
         <motion.div
@@ -165,10 +111,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <div className="rounded-2xl border border-[#6366f1]/15 bg-[#0d0d14]/70 px-6 pt-6 pb-4 backdrop-blur-sm shadow-[0_0_60px_rgba(99,102,241,0.06)]">
-            <TopologyDiagram />
-            <p className="text-center text-[10px] font-mono text-[#94a3b8]/35 mt-2 tracking-wider">
-              architecture
+          <div className="rounded-2xl border border-[rgba(118,115,222,0.15)] bg-[rgba(32,37,49,0.7)] px-6 pt-6 pb-4 backdrop-blur-md shadow-[0_0_60px_rgba(118,115,222,0.08)] transition-all hover:border-[rgba(118,115,222,0.4)]">
+            <KeryxLogo />
+            <p className="text-center text-[11px] font-mono text-[#9ca3af] mt-4 tracking-wider uppercase opacity-80">
+              Identity Verified
             </p>
           </div>
         </motion.div>
