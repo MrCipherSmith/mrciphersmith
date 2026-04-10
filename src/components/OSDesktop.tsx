@@ -84,13 +84,17 @@ function IdentityPane() {
       {/* Background Grid */}
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_14px]" />
       
-      <div className="w-48 h-48 sm:w-64 sm:h-64 relative z-10">
+      <motion.div 
+        className="w-48 h-48 sm:w-64 sm:h-64 relative z-10"
+        animate={{ y: [0, -8, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      >
         <img 
           src="/keryx_avatar.png" 
           alt="Keryx Magritte Avatar" 
           className="w-full h-full object-cover rounded-3xl drop-shadow-[0_15px_35px_rgba(118,115,222,0.2)] brightness-[0.8] contrast-[1.05] saturate-[0.85]" 
         />
-      </div>
+      </motion.div>
 
       <div className="z-10 mt-6 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-2 font-mono">Keryx</h1>
@@ -112,11 +116,15 @@ function ModulesPane({ setHovered }: { setHovered: (s: string | null) => void })
           key={concept.name}
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
+          whileHover={{ scale: 1.02, x: -5 }}
+          whileTap={{ scale: 0.98 }}
           transition={{ delay: 0.3 + (idx * 0.1) }}
           onMouseEnter={() => setHovered(concept.name)}
           onMouseLeave={() => setHovered(null)}
-          className="group flex-1 bg-[#151921]/60 border border-[#7673DE]/10 hover:border-[#7673DE]/40 hover:bg-[#1A1F2B]/90 rounded-xl p-5 backdrop-blur-md transition-all flex items-center justify-between shadow-sm cursor-pointer"
+          className="group flex-1 bg-gradient-to-l from-[#0e1117]/80 to-[#151921]/60 border border-[#7673DE]/10 hover:border-[#7673DE]/50 hover:from-[#151921]/90 hover:to-[#1A1F2B]/90 rounded-xl p-5 backdrop-blur-md transition-all duration-300 flex items-center justify-between cursor-pointer hover:shadow-[0_0_30px_rgba(118,115,222,0.15)] relative overflow-hidden"
         >
+          {/* Edge highlight injection on hover */}
+          <div className="absolute top-0 right-0 h-full w-[2px] bg-[#7673DE] opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_10px_rgba(118,115,222,1)]" />
           <div>
             <h3 className="text-white font-mono font-bold mb-1 group-hover:text-[#7673DE] transition-colors">{concept.name}</h3>
             <p className="text-[#9ca3af] text-xs max-w-xs">{concept.desc}</p>
