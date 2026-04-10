@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 
 // Core Ideas
 const concepts = [
@@ -126,10 +127,11 @@ function IdentityPane() {
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       >
-        <img 
+        <Image 
           src="/keryx_avatar.png" 
           alt="Keryx Magritte Avatar" 
-          className="w-full h-full object-cover rounded-3xl drop-shadow-[0_15px_35px_rgba(118,115,222,0.2)] brightness-[0.8] contrast-[1.05] saturate-[0.85]" 
+          fill
+          className="object-cover rounded-3xl drop-shadow-[0_15px_35px_rgba(118,115,222,0.2)] brightness-[0.8] contrast-[1.05] saturate-[0.85]" 
         />
       </motion.div>
 
