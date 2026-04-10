@@ -106,7 +106,7 @@ function TerminalPane({ hoveredItem }: { hoveredItem: string | null }) {
         <div className="w-3 h-3 rounded-full bg-green-500/50" />
         <span className="text-[#9ca3af] ml-2 opacity-60 uppercase text-[10px] tracking-widest">Sys_Terminal</span>
       </div>
-      <div className="flex-1 min-h-0 overflow-y-auto pr-2 space-y-1 terminal-scroll">
+      <div className="flex-1 min-h-0 overflow-y-auto pr-2 space-y-1 terminal-scroll pb-4">
         {logs.map((log) => (
           <TypewriterLine key={log.id} text={log.text} startDelay={log.delay} />
         ))}
@@ -154,7 +154,7 @@ function IdentityPane() {
 // Projects pane
 function ModulesPane({ setHovered }: { setHovered: (s: string | null) => void }) {
   return (
-    <div className="h-full flex flex-col gap-4">
+    <div className="h-full flex flex-col gap-4 pb-4">
       {concepts.map((concept, idx) => (
         <motion.div
           key={concept.name}
@@ -186,8 +186,8 @@ export default function OSDesktop() {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
   return (
-    <main className="min-h-screen bg-[#0C0E14] text-white p-4 sm:p-6 lg:p-10 flex items-center justify-center overflow-x-hidden font-sans">
-      <div className="w-full max-w-[1600px] h-auto xl:h-[85vh] min-h-[800px] grid grid-cols-1 xl:grid-cols-12 gap-6 lg:gap-8 xl:gap-8 relative z-10 py-10 xl:py-0">
+    <main className="min-h-screen bg-[#0C0E14] text-white p-4 pb-8 sm:p-6 lg:p-10 lg:pb-12 flex items-center justify-center overflow-x-hidden font-sans">
+      <div className="w-full max-w-[1600px] h-auto xl:h-[85vh] min-h-[800px] grid grid-cols-1 xl:grid-cols-12 gap-6 lg:gap-8 xl:gap-8 relative z-10 py-10 xl:py-0 pb-4">
         
         {/* Left Column: Terminal */}
         <div className="xl:col-span-3 h-[320px] sm:h-[400px] xl:h-[85vh] xl:max-h-full min-h-0 order-2 xl:order-1">
