@@ -32,28 +32,65 @@ const concepts = [
   }
 ];
 
+// Streaming text component
+function TypewriterLine({ text, startDelay = 0 }: { text: string; startDelay?: number }) {
+  const [displayed, setDisplayed] = useState("");
+
+  useEffect(() => {
+    let index = 0;
+    const timeout = setTimeout(() => {
+      const interval = setInterval(() => {
+        index++;
+        setDisplayed(text.slice(0, index));
+        if (index > text.length) {
+          clearInterval(interval);
+        }
+      }, 15);
+      return () => clearInterval(interval);
+    }, startDelay);
+
+    return () => clearTimeout(timeout);
+  }, [text, startDelay]);
+
+  return <div className="opacity-90 leading-relaxed font-medium">{displayed || "\u00A0"}</div>;
+}
+
+type LogEntry = { id: string; text: string; delay: number };
+
 // Terminal pane
 function TerminalPane({ hoveredItem }: { hoveredItem: string | null }) {
-  const [logs, setLogs] = useState<string[]>([
-    "INITIALIZING KERYX OS v2.0.4...",
-    "establishing connection to main protocol...",
-    "kernel: verified. memory: intact.",
-    "READY."
+  const [logs, setLogs] = useState<LogEntry[]>([
+    { id: "init-1", text: "INITIALIZING KERYX OS v2.0.4...", delay: 0 },
+    { id: "init-2", text: "establishing connection to main protocol...", delay: 400 },
+    { id: "init-3", text: "kernel: verified. memory: intact.", delay: 1000 },
+    { id: "init-4", text: "READY. Listening for module inspection...", delay: 1600 }
   ]);
   const endRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (hoveredItem) {
+      const pfx = Date.now();
+      const newLogs: LogEntry[] = [
+        { id: `${pfx}-1`, text: `> EXEC: analyze_module --target="${hoveredItem}"`, delay: 0 },
+        { id: `${pfx}-2`, text: `[AUTH] Verifying neural signature... GRANTED`, delay: 500 },
+        { id: `${pfx}-3`, text: `[INFO] Parsing topological vectors for ${hoveredItem}`, delay: 1000 },
+        { id: `${pfx}-4`, text: `[RESULT] Memory buffer mapped at 0x${Math.floor(Math.random()*16777215).toString(16).toUpperCase()}`, delay: 1600 }
+      ];
       setLogs((prev) => {
-        const newLogs = [...prev, `> EXEC: inspect [${hoveredItem}]`, `reading metadata for ${hoveredItem}... DONE.`];
-        return newLogs.length > 50 ? newLogs.slice(-50) : newLogs;
+        const next = [...prev, ...newLogs];
+        return next.length > 50 ? next.slice(-50) : next;
       });
     }
   }, [hoveredItem]);
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [logs]);
+    const int = setInterval(() => {
+      if (endRef.current) {
+        endRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
+      }
+    }, 150);
+    return () => clearInterval(int);
+  }, []);
 
   return (
     <div className="bg-[#10131A]/80 border border-[#7673DE]/20 rounded-xl p-4 font-mono text-xs text-[#30b171] h-full flex flex-col overflow-hidden backdrop-blur-md relative shadow-[inset_0_0_20px_rgba(48,177,113,0.05)]">
@@ -64,10 +101,10 @@ function TerminalPane({ hoveredItem }: { hoveredItem: string | null }) {
         <span className="text-[#9ca3af] ml-2 opacity-60 uppercase text-[10px] tracking-widest">Sys_Terminal</span>
       </div>
       <div className="flex-1 min-h-0 overflow-y-auto pr-2 space-y-1 terminal-scroll">
-        {logs.map((log, i) => (
-          <div key={i} className="opacity-90">{log}</div>
+        {logs.map((log) => (
+          <TypewriterLine key={log.id} text={log.text} startDelay={log.delay} />
         ))}
-        <div ref={endRef} />
+        <div ref={endRef} className="h-1" />
       </div>
       <div className="mt-3 pt-2 border-t border-[#7673DE]/10 flex items-center text-[#9ca3af] shrink-0">
         <span className="text-[#7673DE] mr-2 font-bold">{"$"}</span>
